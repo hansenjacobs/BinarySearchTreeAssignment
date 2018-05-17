@@ -16,7 +16,7 @@ namespace BinarySearchTreeAssignment
             Count = 0;
         }
 
-        public int Count { get; }
+        public int Count { get; private set; }
 
         public bool IsEmpty
         {
@@ -28,10 +28,12 @@ namespace BinarySearchTreeAssignment
             if (!IsEmpty)
             {
                 root.Insert(value);
+                Count++;
             }
             else
             {
                 root = new Node(value);
+                Count++;
             }
         }
 
